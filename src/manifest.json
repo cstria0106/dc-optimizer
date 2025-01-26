@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "DC 최적화",
+  "description": "갤질을 더 빠르게",
+  "version": "1.1",
+  "permissions": ["declarativeNetRequest", "cookies", "storage"],
+  "host_permissions": ["*://*.dcinside.com/*", "*://dcinside.com/*"],
+  "background": {
+    "service_worker": "worker.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.dcinside.com/*", "*://dcinside.com/*"],
+      "js": ["content.ts"],
+      "css": ["content/styles/loading.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

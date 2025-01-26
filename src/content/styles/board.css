@@ -1,0 +1,86 @@
+@import "tailwindcss/theme.css" layer(theme);
+
+.brick-wid,
+.search-wrap2,
+.search-wrap3 {
+  @apply max-w-6xl mx-auto;
+}
+
+.sec-wrap-sub,
+.header {
+  @apply bg-inherit;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+.optimize-dc {
+  & > .board {
+    @apply grid grid-cols-[auto_1fr_repeat(4,auto)];
+    @apply text-[13px];
+
+    & > * {
+      @apply px-2 py-1 border-solid border-0 border-b border-gray-200;
+
+      @for $i from 7 to 12 {
+        &:nth-child(12n + $(i)) {
+          @apply bg-gray-50;
+        }
+      }
+    }
+
+    .tab {
+      @apply text-gray-500;
+    }
+
+    .title {
+      @apply flex items-center hover:underline;
+
+      .title-text {
+        @apply ml-0.5 text-gray-800;
+      }
+    }
+
+    .comment-count {
+      @apply text-gray-400 ml-1;
+    }
+
+    .author {
+      @apply text-gray-600;
+      @apply flex items-center;
+
+      &.ip {
+        @apply text-red-600;
+      }
+
+      .author-name {
+        @apply max-w-24 whitespace-nowrap break-all overflow-hidden overflow-ellipsis;
+      }
+
+      .author-id {
+        @apply ml-1 text-xs;
+      }
+
+      .author-badge {
+        @apply ml-1 flex items-center;
+      }
+    }
+
+    .date {
+      @apply flex items-center text-xs text-gray-500;
+    }
+
+    .view-count,
+    .recommend-count {
+      @apply flex items-center text-gray-500 text-xs;
+      svg {
+        @apply w-4 h-3 mr-0.5;
+      }
+
+      &.positive {
+        @apply text-blue-600;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "tailwindcss/theme.css" layer(theme);
+
+.optimize-dc .control {
+  @apply fixed flex bottom-4 right-4 gap-2;
+
+  button,
+  a {
+    @apply px-4 py-2 text-center rounded-lg bg-gray-800 text-white;
+
+    &.write {
+      @apply bg-blue-600 hover:bg-blue-700;
+    }
+
+    &.recommend {
+      @apply bg-orange-600 hover:bg-orange-700;
+    }
+  }
+}
